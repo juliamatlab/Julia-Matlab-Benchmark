@@ -6,7 +6,7 @@ This repository is a place for accurate benchmarks between Julia and MATLAB and 
 Various commonly used operations for Matrix operations, Mathematical calculations, Data Processing, Image processing, Signal processing, and different algorithms are tested.
 
 ## Development and Future
-This repository will be extended as more functions are added to the [MatlabCompat](https://github.com/aminya/MatlabCompat.jl) repository, which is meant to map all the Matlab functions to Julia native functions.
+This repository will be extended as more functions are added to the [JuliaMatlab](https://github.com/juliamatlab) repository, which is meant to map all the Matlab functions to Julia native functions.
 
 ## Other Features
 * Latest Julia language is used (compatible with 1.0.4 and higher).
