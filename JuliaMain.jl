@@ -17,7 +17,8 @@ const JuliaFlag=true; # run Julia benchmark
 const JuliaSIMDFlag=true; # run Julia SIMD benchmark
 const debugging=false;
 
-
+# BLAS threads = 1
+BLAS.set_num_threads(1)
 # Julia
 if JuliaFlag
     include("JuliaBench.jl");
@@ -45,6 +46,40 @@ if JuliaSIMDFlag
         writedlm("RunTimeData\\RunTimeJulia$(BLAS.vendor())SIMDTable.csv", tRunTime,',');
         # RunTime save
         file = matopen("RunTimeData\\RunTimeJulia$(BLAS.vendor())SIMD.mat", "w")
+        write(file, "mRunTime", mRunTime)
+        close(file)
+    end
+end
+
+# BLAS threads = 4
+BLAS.set_num_threads(4)
+# Julia
+if JuliaFlag
+    include("JuliaBench.jl");
+    tRunTime, mRunTime= JuliaBench(operationMode);
+
+    if saveData
+        # Main RunTime Table write
+        writedlm("RunTimeData\\RunTimeJulia$(BLAS.vendor())Table_4Thread.csv", tRunTime,',');
+        # RunTime save
+        file = matopen("RunTimeData\\RunTimeJulia$(BLAS.vendor())_4Thread.mat", "w")
+        write(file, "mRunTime", mRunTime)
+        close(file)
+    end
+end
+
+
+
+# Julia SIMD
+if JuliaSIMDFlag
+    include("JuliaBenchSIMD.jl")
+    tRunTime, mRunTime= JuliaBenchSIMD(operationMode);
+
+    if saveData
+        # Main RunTime Table write
+        writedlm("RunTimeData\\RunTimeJulia$(BLAS.vendor())SIMDTable_4Thread.csv", tRunTime,',');
+        # RunTime save
+        file = matopen("RunTimeData\\RunTimeJulia$(BLAS.vendor())SIMD_4Thread.mat", "w")
         write(file, "mRunTime", mRunTime)
         close(file)
     end

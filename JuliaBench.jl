@@ -81,6 +81,7 @@ function MatrixMultiplication( matrixSize, mX, mY )
 	scalarB = rand();
 
 	mA = (scalarA .+ mX) * (scalarB .+ mY);
+	# mA = BLAS.gemm!('N', 'N', scalarA, mX, collect(I), scalarB, mY)
 
 	return mA;
 end

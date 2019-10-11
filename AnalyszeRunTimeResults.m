@@ -65,11 +65,11 @@ for ii = 1:size(mRunTimeMatlab,1)
 %           loglog(vMatrixSizeJuliaSIMDnThreads4,mRunTimeJuliaSIMDnThreads4(plotJuliaSIMD,:),'-^','LineWidth',lineWidth,'MarkerFaceColor','k'); hold on;
           h=loglog(vMatrixSizeJuliamklSIMD,mRunTimeJuliamklSIMD(plotJuliaSIMD,:),'-h','LineWidth',lineWidth,'MarkerFaceColor',[0.5,0.5,0]); hold on;
 
-%         legend('MATLAB','Julia','Julia-4-Threads','Julia-MKL','Julia-SIMD','Julia-SIMD-4-Threads','Julia-MKL-SIMD','Location','southeast')
+%         legend('MATLAB','Julia-1-BLAS-Thread','Julia-4-BLAS-Threads','Julia-MKL','Julia-SIMD','Julia-Blas-SIMD-4-BLAS-Threads','Julia-MKL-SIMD','Location','southeast')
         legend('MATLAB','Julia','Julia-MKL','Julia-SIMD','Julia-MKL-SIMD','Location','southeast')
 
     else
-%         legend('MATLAB','Julia','Julia-4-Threads','Julia-MKL','Location','southeast')
+%         legend('MATLAB','Julia-1-BLAS-Thread','Julia-4-BLAS-Threads','Julia-MKL','Location','southeast')
         legend('MATLAB','Julia','Julia-MKL','Location','southeast')
     end
     hold off;
@@ -102,11 +102,11 @@ for ii = 1:size(mRunTimeMatlab,1)
           loglog(vMatrixSizeJuliaSIMDnThreads4,mRunTimeJuliaSIMDnThreads4(plotJuliaSIMD,:),'-^','LineWidth',lineWidth,'MarkerFaceColor','k'); hold on;
           h=loglog(vMatrixSizeJuliamklSIMD,mRunTimeJuliamklSIMD(plotJuliaSIMD,:),'-h','LineWidth',lineWidth,'MarkerFaceColor',[0.5,0.5,0]); hold on;
 
-        legend('MATLAB','Julia','Julia-4-Threads','Julia-MKL','Julia-SIMD','Julia-SIMD-4-Threads','Julia-MKL-SIMD','Location','southeast')
+        legend('MATLAB','Julia-1-BLAS-Thread','Julia-4-BLAS-Threads','Julia-MKL','Julia-SIMD','Julia-Blas-SIMD-4-BLAS-Threads','Julia-MKL-SIMD','Location','southeast')
 %         legend('MATLAB','Julia','Julia-MKL','Julia-SIMD','Julia-MKL-SIMD','Location','southeast')
 
     else
-        legend('MATLAB','Julia','Julia-4-Threads','Julia-MKL','Location','southeast')
+        legend('MATLAB','Julia-1-BLAS-Thread','Julia-4-BLAS-Threads','Julia-MKL','Location','southeast')
 %         legend('MATLAB','Julia','Julia-MKL','Location','southeast')
     end
     hold off;

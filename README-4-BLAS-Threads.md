@@ -1,5 +1,4 @@
 # Julia-Matlab-Benchmark
-### By Amin Yahyaabadi
 
 This repository is a place for accurate benchmarks between Julia and MATLAB and comparing the two.
 
@@ -245,7 +244,7 @@ Two version of Julia was used:
      * LAPACK Version - `libopenblas64_`.
      * LIBM Version - `libopenlibm`.
      * LLVM Version - `libLLVM-6.0.1 (ORCJIT, skylake)`.
-     * JULIA_NUM_THREADS = 1 and 4
+     * JULIA_NUM_THREADS = 1
 
   [01]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/nThreads4/Figure17.png
   [02]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/nThreads4/Figure18.png
@@ -266,3 +265,5 @@ Two version of Julia was used:
   [50]: http://julialang.org/blog/2017/01/moredots
 
 The idea for this repository is taken from https://github.com/aminya/MatlabJuliaMatrixOperationsBenchmark which was a fork from https://github.com/RoyiAvital/MatlabJuliaMatrixOperationsBenchmark
+
+#### By Amin Yahyaabadi
