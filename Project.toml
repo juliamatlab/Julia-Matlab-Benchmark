@@ -1,0 +1,9 @@
+name = "JuliaMatlabBenchmark"
+uuid = "e7296374-491a-4155-afc0-a3f4474b88ae"
+authors = ["aminya <aminyahyaabadi74@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+BenchmarkTools = "6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf"
+MAT = "23992714-dd62-5051-b70f-ba57cb901cac"
+Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"

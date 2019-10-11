@@ -44,7 +44,7 @@ function AnalysisJuliaPlotter()
             labels=["Julia-SIMD" "Julia-MKL-SIMD"],markershape =:auto, markersize=2);
         end
 
-        display(plt); # display in plot pane
+        # display(plt); # display in plot pane
         if(saveImages == 1)
             savefig("Figures\\Julia\\Figure$(ii).png");
         end

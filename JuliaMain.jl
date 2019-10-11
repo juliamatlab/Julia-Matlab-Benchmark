@@ -1,5 +1,3 @@
-cd(dirname(@__FILE__))
-clearconsole();
 println("started")
 
 # ]add BenchmarkTools

@@ -27,7 +27,7 @@ Generation of a Square Matrix using the `randn()` function and `rand()`.
 
 ### Matrix Addition
 
-Addition of 2 square matrices where each is multiplied by a scalar.  
+Addition of 2 square matrices where each is multiplied by a scalar.
 
  * MATLAB Code - `mA = (scalarA .* mX) + (scalarB .* mY)`.
  * Julia Code - `mA = (scalarA .* mX) .+ (scalarB .* mY)` (Using the dot for [Loop Fusion][50]).
@@ -45,7 +45,7 @@ Multiplication of 2 square matrices after a scalar is added to each.
 
 ### Matrix Quadratic Form
 
-Calculation of Matrix / Vector Quadratic Form.  
+Calculation of Matrix / Vector Quadratic Form.
 
  * MATLAB Code - `mA = ((mX * vX).' * (mX * vX)) + (vB.' * vX) + sacalrC;`.
  * Julia Code - `	mA = (transpose(mX * vX) * (mX * vX)) .+ (transpose(vB) * vX) .+ scalarC;` (Using the dot for [Loop Fusion][50]).
@@ -54,8 +54,8 @@ Calculation of Matrix / Vector Quadratic Form.
 
 ### Matrix Reductions
 
-Set of operations which reduce the matrix dimension (Works along one dimension).  
-The operation is done on 2 different matrices on along different dimensions.  
+Set of operations which reduce the matrix dimension (Works along one dimension).
+The operation is done on 2 different matrices on along different dimensions.
 The result is summed with broadcasting to generate a new matrix.
  * MATLAB Code - `mA = sum(mX, 1) + min(mY, [], 2);`.
  * Julia Code - `mA = sum(mX, dims=1) .+ minimum(mY, dims=2); ` (Using the dot for [Loop Fusion][50]).
@@ -136,7 +136,7 @@ Solving a Vector Linear System and a Matrix Linear System.
 
 ### Linear Least Squares
 
-Solving a Vector Least Squares and a Matrix Least Squares.  
+Solving a Vector Least Squares and a Matrix Least Squares.
 This is combines Matrix Transpose, Matrix Multiplication, Matrix Inversion (Positive Definite) and Matrix Vector / Matrix Multiplication.
 
  * MATLAB Code - `vX = (mA.' * mA) \ (mA.' * vB)` and `mX = (mA.' * mA) \ (mA.' * mB)`.
@@ -146,8 +146,8 @@ This is combines Matrix Transpose, Matrix Multiplication, Matrix Inversion (Posi
 
 ### Squared Distance Matrix
 
-Calculation of the Squared Distance Matrix between 2 sets of Vectors.  
-Namely, each element in the matrix is the squared distance between 2 vectors.  
+Calculation of the Squared Distance Matrix between 2 sets of Vectors.
+Namely, each element in the matrix is the squared distance between 2 vectors.
 This is calculation is needed for instance in the K-Means algorithm.
 It is composed of Matrix Reduction operation, Matrix Multiplication and Broadcasting.
 
@@ -167,11 +167,15 @@ Running 10 iterations of the K-Means Algorithm.
 
 
 ## How to Run
+Download repository. Or add the package in Julia:
+```julia
+] add https://github.com/juliamatlab/Julia-Matlab-Benchmark
+```
 ### Run the Benchmark - Julia
 * Download `JuliaMain.jl`and `JuliaBench.jl`
 * From console:
 
-  ```
+  ```julia
   include("JuliaMain.jl");
   ```
 
@@ -217,7 +221,9 @@ coming soon
  https://www.dell.com/en-ca/work/shop/dell-tablets/latitude-5590/spd/latitude-15-5590-laptop
  * CPU - Intel(R) Core(TM) i5-8250U @ 1.6 [GHz] 1800 Mhz, 4 Cores, 8 Logical Processors.
  * Memory - 1x8GB DDR4 2400MHz Non-ECC
- * Windows 10 Professional 64 Bit.
+ * Windows 10 Professional 64 Bit
+ * WORD_SIZE: 64
+
 
  * MATLAB R2018b.
     * BLAS Version (`version -blas`) - `Intel(R) Math Kernel Library Version 2018.0.1 Product Build 20171007 for Intel(R) 64 architecture applications, CNR branch AVX2`
@@ -225,40 +231,38 @@ coming soon
 
 Two version of Julia was used:
 
- * JuliaMKL: Julia 1.1.1 + MKL.
-     * Julia Version (`versioninfo()`) - `Julia Version 1.1.1 Commit 55e36cc308 (2019-05-16 04:10 UTC)`;
+ * JuliaMKL: Julia 1.4.0 + MKL.
+     * Julia Version (`versioninfo()`) - `Julia VersionVersion 1.4.0-DEV.233 Commit 32e3c9ea36 (2019-10-02 12:28 UTC)`;
      * BLAS Version - `LinearAlgebra.BLAS.vendor(): Intel MKL `. https://github.com/JuliaComputing/MKL.jl , For tutorial to install: https://github.com/aminya/MKL.jl/tree/patch-1
      * LAPACK Version - `libopenblas64_`.
      * LIBM Version - `libopenlibm`.
      * LLVM Version - `libLLVM-6.0.1 (ORCJIT, skylake)`.
-     * JULIA_EDITOR = "C:\~\atom\app-1.38.1\atom.exe"  -a
-     * JULIA_NUM_THREADS = 4
+     * JULIA_NUM_THREADS = 1
 
- * Julia: JuliaPro 1.1.1.1
-     * Julia Version (`versioninfo()`) - `Julia Version 1.1.1 Commit 55e36cc308 (2019-05-16 04:10 UTC)`;
+ * Julia: Julia 1.4.0
+     * Julia Version (`versioninfo()`) - `Julia VersionVersion 1.4.0-DEV.233 Commit 32e3c9ea36 (2019-10-02 12:28 UTC)`;
      * BLAS Version - `LinearAlgebra.BLAS.vendor(): openBlas64 `.
      * LAPACK Version - `libopenblas64_`.
      * LIBM Version - `libopenlibm`.
      * LLVM Version - `libLLVM-6.0.1 (ORCJIT, skylake)`.
-     * JULIA_EDITOR = "C:\JuliaPro-1.1.1.1\app-1.36.0\atom.exe"  -a
-     * JULIA_NUM_THREADS = 4
+     * JULIA_NUM_THREADS = 1 and 4
 
-  [01]: https://github.com/aminya/MatlabJuliaMatrixOperationsBenchmark/blob/master/Figures/Figure1.png
-  [02]: https://github.com/aminya/MatlabJuliaMatrixOperationsBenchmark/blob/master/Figures/Figure2.png
-  [03]: https://github.com/aminya/MatlabJuliaMatrixOperationsBenchmark/blob/master/Figures/Figure3.png
-  [04]: https://github.com/aminya/MatlabJuliaMatrixOperationsBenchmark/blob/master/Figures/Figure4.png
-  [05]: https://github.com/aminya/MatlabJuliaMatrixOperationsBenchmark/blob/master/Figures/Figure5.png
-  [06]: https://github.com/aminya/MatlabJuliaMatrixOperationsBenchmark/blob/master/Figures/Figure6.png
-  [07]: https://github.com/aminya/MatlabJuliaMatrixOperationsBenchmark/blob/master/Figures/Figure7.png
-  [08]: https://github.com/aminya/MatlabJuliaMatrixOperationsBenchmark/blob/master/Figures/Figure8.png
-  [09]: https://github.com/aminya/MatlabJuliaMatrixOperationsBenchmark/blob/master/Figures/Figure9.png
-  [10]: https://github.com/aminya/MatlabJuliaMatrixOperationsBenchmark/blob/master/Figures/Figure10.png
-  [11]: https://github.com/aminya/MatlabJuliaMatrixOperationsBenchmark/blob/master/Figures/Figure11.png
-  [12]: https://github.com/aminya/MatlabJuliaMatrixOperationsBenchmark/blob/master/Figures/Figure12.png
-  [13]: https://github.com/aminya/MatlabJuliaMatrixOperationsBenchmark/blob/master/Figures/Figure13.png
-  [14]: https://github.com/aminya/MatlabJuliaMatrixOperationsBenchmark/blob/master/Figures/Figure14.png
-  [15]: https://github.com/aminya/MatlabJuliaMatrixOperationsBenchmark/blob/master/Figures/Figure15.png
-  [16]: https://github.com/aminya/MatlabJuliaMatrixOperationsBenchmark/blob/master/Figures/Figure16.png
+  [01]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/Figure1.png
+  [02]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/Figure2.png
+  [03]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/Figure3.png
+  [04]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/Figure4.png
+  [05]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/Figure5.png
+  [06]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/Figure6.png
+  [07]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/Figure7.png
+  [08]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/Figure8.png
+  [09]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/Figure9.png
+  [10]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/Figure10.png
+  [11]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/Figure11.png
+  [12]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/Figure12.png
+  [13]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/Figure13.png
+  [14]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/Figure14.png
+  [15]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/Figure15.png
+  [16]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/Figure16.png
   [50]: http://julialang.org/blog/2017/01/moredots
 
 The idea for this repository is taken from https://github.com/aminya/MatlabJuliaMatrixOperationsBenchmark which was a fork from https://github.com/RoyiAvital/MatlabJuliaMatrixOperationsBenchmark
