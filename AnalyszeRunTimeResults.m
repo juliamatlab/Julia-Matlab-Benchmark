@@ -50,7 +50,7 @@ sFunNameJuliamklSIMD=table2array(tRunTimeJuliamklSIMD(2:end,1));
 
 warning('off','MATLAB:legend:IgnoringExtraEntries');
 
-folderName=strjoin(plotID,'vs');
+folderName=strjoin(plotID,'_');
 mkdir(fullfile('Figures',folderName));
 figureIdx           = 0;
 
