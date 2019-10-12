@@ -236,7 +236,7 @@ Two version of Julia was used:
      * LAPACK Version - `libopenblas64_`.
      * LIBM Version - `libopenlibm`.
      * LLVM Version - `libLLVM-6.0.1 (ORCJIT, skylake)`.
-     * JULIA_NUM_THREADS = 1
+     * JULIA_NUM_THREADS = 1. This number of threads is different from BLAS threads. BLAS threads is changed in the code by `BLAS.set_num_threads(1)` and `BLAS.set_num_threads(4)`
 
  * Julia: Julia 1.4.0
      * Julia Version (`versioninfo()`) - `Julia VersionVersion 1.4.0-DEV.233 Commit 32e3c9ea36 (2019-10-02 12:28 UTC)`;
@@ -244,7 +244,7 @@ Two version of Julia was used:
      * LAPACK Version - `libopenblas64_`.
      * LIBM Version - `libopenlibm`.
      * LLVM Version - `libLLVM-6.0.1 (ORCJIT, skylake)`.
-     * JULIA_NUM_THREADS = 1
+     * JULIA_NUM_THREADS = 1. This number of threads is different from BLAS threads. BLAS threads is changed in the code by `BLAS.set_num_threads(1)` and `BLAS.set_num_threads(4)`
 
   [01]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/nThreads4/Figure17.png
   [02]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/nThreads4/Figure18.png
