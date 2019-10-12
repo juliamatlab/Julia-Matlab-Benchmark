@@ -1,4 +1,4 @@
-function AnalyszeRunTimeResults(plotID)
+function MatlabAnalysisPlotter(plotID)
 
 %% Figure Parameters
 

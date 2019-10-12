@@ -1,4 +1,4 @@
-function AnalysisJuliaPlotter()
+function JuliaAnalysisPlotter()
     # Setting Enviorment Parameters
     generateImages = 1
     saveImages = 1

@@ -4,5 +4,5 @@
 using DelimitedFiles
 using LinearAlgebra
 using Plots
-include("AnalysisJuliaPlotter.jl");
-AnalysisJuliaPlotter()
+include("JuliaAnalysisPlotter.jl");
+JuliaAnalysisPlotter()

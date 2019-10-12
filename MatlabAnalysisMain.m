@@ -11,4 +11,4 @@ plotID = {'Matlab', ...
 % put the SIMD IDs in the end for correct legend
 
 
-AnalyszeRunTimeResults(plotID);
+MatlabAnalysisPlotter(plotID);
