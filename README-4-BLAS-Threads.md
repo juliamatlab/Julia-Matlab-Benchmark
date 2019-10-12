@@ -232,7 +232,7 @@ Two version of Julia was used:
 
  * JuliaMKL: Julia 1.4.0 + MKL.
      * Julia Version (`versioninfo()`) - `Julia VersionVersion 1.4.0-DEV.233 Commit 32e3c9ea36 (2019-10-02 12:28 UTC)`;
-     * BLAS Version - `LinearAlgebra.BLAS.vendor(): Intel MKL `.   For tutorial to install https://github.com/JuliaComputing/MKL.jl 
+     * BLAS Version - `LinearAlgebra.BLAS.vendor(): Intel MKL `.   For tutorial to install https://github.com/JuliaComputing/MKL.jl
      * LAPACK Version - `libopenblas64_`.
      * LIBM Version - `libopenlibm`.
      * LLVM Version - `libLLVM-6.0.1 (ORCJIT, skylake)`.
@@ -246,22 +246,22 @@ Two version of Julia was used:
      * LLVM Version - `libLLVM-6.0.1 (ORCJIT, skylake)`.
      * JULIA_NUM_THREADS = 1. This number of threads is different from BLAS threads. BLAS threads is changed in the code by `BLAS.set_num_threads(1)` and `BLAS.set_num_threads(4)`
 
-  [01]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/nThreads4/Figure17.png
-  [02]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/nThreads4/Figure18.png
-  [03]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/nThreads4/Figure19.png
-  [04]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/nThreads4/Figure20.png
-  [05]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/nThreads4/Figure21.png
-  [06]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/nThreads4/Figure22.png
-  [07]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/nThreads4/Figure23.png
-  [08]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/nThreads4/Figure24.png
-  [09]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/nThreads4/Figure25.png
-  [10]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/nThreads4/Figure26.png
-  [11]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/nThreads4/Figure27.png
-  [12]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/nThreads4/Figure28.png
-  [13]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/nThreads4/Figure29.png
-  [14]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/nThreads4/Figure30.png
-  [15]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/nThreads4/Figure31.png
-  [16]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/nThreads4/Figure32.png
+  [01]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/4BLASThreads/Figure17.png
+  [02]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/4BLASThreads/Figure18.png
+  [03]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/4BLASThreads/Figure19.png
+  [04]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/4BLASThreads/Figure20.png
+  [05]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/4BLASThreads/Figure21.png
+  [06]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/4BLASThreads/Figure22.png
+  [07]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/4BLASThreads/Figure23.png
+  [08]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/4BLASThreads/Figure24.png
+  [09]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/4BLASThreads/Figure25.png
+  [10]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/4BLASThreads/Figure26.png
+  [11]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/4BLASThreads/Figure27.png
+  [12]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/4BLASThreads/Figure28.png
+  [13]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/4BLASThreads/Figure29.png
+  [14]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/4BLASThreads/Figure30.png
+  [15]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/4BLASThreads/Figure31.png
+  [16]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/4BLASThreads/Figure32.png
   [50]: http://julialang.org/blog/2017/01/moredots
 
 The idea for this repository is taken from https://github.com/aminya/MatlabJuliaMatrixOperationsBenchmark which was a fork from https://github.com/RoyiAvital/MatlabJuliaMatrixOperationsBenchmark

@@ -58,18 +58,16 @@ for ii = 1:size(mRunTimeMatlab,1)
     loglog(vMatrixSizeJulia,mRunTimeJulia(ii,:),'-s','LineWidth',lineWidth,'MarkerFaceColor','r'); hold on;
 %     loglog(vMatrixSizeJulianThreads4,mRunTimeJulianThreads4(ii,:),'-x','LineWidth',lineWidth,'MarkerFaceColor','w'); hold on;
     loglog(vMatrixSizeJuliamkl,mRunTimeJuliamkl(ii,:),'-p','LineWidth',lineWidth,'MarkerFaceColor','g'); hold on;
-    
+
     plotJuliaSIMD=ismember( sFunNameJuliamklSIMD, sFunNameMatlab{ii} ); % if 1 will plot Julia-SIMD
     if any(plotJuliaSIMD)
     	  loglog(vMatrixSizeJuliaSIMD,mRunTimeJuliaSIMD(plotJuliaSIMD,:),'-d','LineWidth',lineWidth,'MarkerFaceColor',[0.5,0,0.5]); hold on;
 %           loglog(vMatrixSizeJuliaSIMDnThreads4,mRunTimeJuliaSIMDnThreads4(plotJuliaSIMD,:),'-^','LineWidth',lineWidth,'MarkerFaceColor','k'); hold on;
           h=loglog(vMatrixSizeJuliamklSIMD,mRunTimeJuliamklSIMD(plotJuliaSIMD,:),'-h','LineWidth',lineWidth,'MarkerFaceColor',[0.5,0.5,0]); hold on;
 
-%         legend('MATLAB','Julia-1-BLAS-Thread','Julia-4-BLAS-Threads','Julia-MKL','Julia-SIMD','Julia-Blas-SIMD-4-BLAS-Threads','Julia-MKL-SIMD','Location','southeast')
         legend('MATLAB','Julia-1-BLAS-Thread','Julia-MKL','Julia-SIMD','Julia-MKL-SIMD','Location','southeast')
 
     else
-%         legend('MATLAB','Julia-1-BLAS-Thread','Julia-4-BLAS-Threads','Julia-MKL','Location','southeast')
         legend('MATLAB','Julia-1-BLAS-Thread','Julia-MKL','Location','southeast')
     end
     hold off;
@@ -95,19 +93,17 @@ for ii = 1:size(mRunTimeMatlab,1)
     loglog(vMatrixSizeJulia,mRunTimeJulia(ii,:),'-s','LineWidth',lineWidth,'MarkerFaceColor','r'); hold on;
     loglog(vMatrixSizeJulianThreads4,mRunTimeJulianThreads4(ii,:),'-x','LineWidth',lineWidth,'MarkerFaceColor','w'); hold on;
     loglog(vMatrixSizeJuliamkl,mRunTimeJuliamkl(ii,:),'-p','LineWidth',lineWidth,'MarkerFaceColor','g'); hold on;
-    
+
     plotJuliaSIMD=ismember( sFunNameJuliamklSIMD, sFunNameMatlab{ii} ); % if 1 will plot Julia-SIMD
     if any(plotJuliaSIMD)
     	  loglog(vMatrixSizeJuliaSIMD,mRunTimeJuliaSIMD(plotJuliaSIMD,:),'-d','LineWidth',lineWidth,'MarkerFaceColor',[0.5,0,0.5]); hold on;
           loglog(vMatrixSizeJuliaSIMDnThreads4,mRunTimeJuliaSIMDnThreads4(plotJuliaSIMD,:),'-^','LineWidth',lineWidth,'MarkerFaceColor','k'); hold on;
           h=loglog(vMatrixSizeJuliamklSIMD,mRunTimeJuliamklSIMD(plotJuliaSIMD,:),'-h','LineWidth',lineWidth,'MarkerFaceColor',[0.5,0.5,0]); hold on;
 
-        legend('MATLAB','Julia-1-BLAS-Thread','Julia-4-BLAS-Threads','Julia-MKL','Julia-SIMD','Julia-Blas-SIMD-4-BLAS-Threads','Julia-MKL-SIMD','Location','southeast')
-%         legend('MATLAB','Julia-1-BLAS-Thread','Julia-MKL','Julia-SIMD','Julia-MKL-SIMD','Location','southeast')
+        legend('MATLAB','Julia-1-BLAS-Thread','Julia-4-BLAS-Threads','Julia-MKL','Julia-SIMD-1-BLAS-Thread','Julia-Blas-SIMD-4-BLAS-Threads','Julia-MKL-SIMD','Location','southeast')
 
     else
         legend('MATLAB','Julia-1-BLAS-Thread','Julia-4-BLAS-Threads','Julia-MKL','Location','southeast')
-%         legend('MATLAB','Julia-1-BLAS-Thread','Julia-MKL','Location','southeast')
     end
     hold off;
     title(num2str(sFunNameMatlab{ii}));
@@ -116,7 +112,7 @@ for ii = 1:size(mRunTimeMatlab,1)
 
     if(saveImage == 1)
         set(hAxes, 'LooseInset', [0.05, 0.05, 0.05, 0.05]);
-        saveas(hFigure,fullfile('Figures','nThreads4',['Figure', num2str(figureIdx), '.png']));
+        saveas(hFigure,fullfile('Figures','4BLASThreads',['Figure', num2str(figureIdx), '.png']));
     end
 
 end
