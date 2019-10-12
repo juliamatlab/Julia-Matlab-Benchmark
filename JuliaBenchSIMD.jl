@@ -5,19 +5,20 @@ function JuliaBenchSIMD( operationMode )
 
     allFunctionsString = [ "Matrix Addition", "Matrix Multiplication", "Element Wise Operations"];
 
-    if (operationMode == 1) # partial benchmark
-        vMatrixSize =  dropdims(DelimitedFiles.readdlm("Inputs\\vMatrixSizePartial.csv", ',',Int64), dims=1);
-        numIterations = dropdims(DelimitedFiles.readdlm("Inputs\\numIterationsPartial.csv", ',',Int64), dims=1);
+	if (operationMode == 1) # partial benchmark
+		vMatrixSize =  dropdims(readdlm(joinpath("Inputs","vMatrixSizePartial.csv"), ',',Int64), dims=1);
+		numIterations = dropdims(readdlm(joinpath("Inputs","numIterationsPartial.csv"), ',',Int64), dims=1);
 
-    elseif (operationMode == 2) # full benchmark
-        vMatrixSize = dropdims(readdlm("Inputs\\vMatrixSizeFull.csv", ',',Int64), dims=1);
-        numIterations =  dropdims(readdlm("Inputs\\numIterationsFull.csv", ',',Int64), dims=1);
+	elseif (operationMode == 2) # full benchmark
+		vMatrixSize = dropdims(readdlm(joinpath("Inputs","vMatrixSizeFull.csv"), ',',Int64), dims=1);
+		numIterations =  dropdims(readdlm(joinpath("Inputs","numIterationsFull.csv"), ',',Int64), dims=1);
 
-    elseif (operationMode == 0) # Test benchmark
-        vMatrixSize = 2;
-        numIterations =  1;
+	elseif (operationMode == 0) # Test benchmark
+		vMatrixSize = 2;
+		numIterations =  1;
 
-    end
+	end
+
 
     numIterations = numIterations[1]; # It is 1x1 Array -> Scalar
 
@@ -57,7 +58,7 @@ function JuliaBenchSIMD( operationMode )
     return tRunTime, mRunTime;
 end
 
-
+#=
 function MatrixGeneration( matrixSize, mX, mY )
 
   mA = randn(matrixSize, matrixSize);
@@ -65,7 +66,7 @@ function MatrixGeneration( matrixSize, mX, mY )
 
   return mA;
 end
-
+=#
 function MatrixAddition( matrixSize, mX, mY )
 
   scalarA = rand();
@@ -93,7 +94,7 @@ function MatrixMultiplication( matrixSize, mX, mY )
 
   return mA;
 end
-
+#=
 function MatrixQuadraticForm( matrixSize, mX, mY )
 
   vX = randn(matrixSize);
@@ -111,7 +112,7 @@ function MatrixReductions( matrixSize, mX, mY )
 
   return mA;
 end
-
+=#
 function ElementWiseOperations( matrixSize, mX, mY )
 
   mA = rand(matrixSize, matrixSize);
@@ -141,7 +142,7 @@ function ElementWiseOperations( matrixSize, mX, mY )
   return mA;
 end
 
-
+#=
 function MatrixExp( matrixSize, mX, mY )
 
     mA = exp(mX);
@@ -254,3 +255,4 @@ function KMeans( matrixSize, mX, mY )
 
   return mA;
 end
+=#
