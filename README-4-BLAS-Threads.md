@@ -232,7 +232,7 @@ Two version of Julia was used:
 
  * JuliaMKL: Julia 1.4.0 + MKL.
      * Julia Version (`versioninfo()`) - `Julia VersionVersion 1.4.0-DEV.233 Commit 32e3c9ea36 (2019-10-02 12:28 UTC)`;
-     * BLAS Version - `LinearAlgebra.BLAS.vendor(): Intel MKL `. https://github.com/JuliaComputing/MKL.jl , For tutorial to install: https://github.com/aminya/MKL.jl/tree/patch-1
+     * BLAS Version - `LinearAlgebra.BLAS.vendor(): Intel MKL `.   For tutorial to install https://github.com/JuliaComputing/MKL.jl 
      * LAPACK Version - `libopenblas64_`.
      * LIBM Version - `libopenlibm`.
      * LLVM Version - `libLLVM-6.0.1 (ORCJIT, skylake)`.
