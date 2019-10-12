@@ -108,6 +108,71 @@ function AnalysisJuliaPlotter()
         ii = ii + 1
     end
 
+    # Displaying Results - 4 Threads Figures
+    ii = 1
+    for fun in sFunNameMatlab
 
+        plt = plot(
+            vMatrixSizeMatlab,
+            [
+             mRunTimeMatlab[ii, :],
+             mRunTimeJulia[ii, :],
+             mRunTimeJuliaThreads4[ii, :],
+             mRunTimeJuliamkl[ii, :],
+            ],
+            labels = [
+                "MATLAB",
+                "Julia-1-BLAS-Thread",
+                "Julia-4-BLAS-Threads",
+                "Julia-MKL",
+            ],
+            legend = :bottomright,
+            markershape = :auto,
+            markersize = 2,
+            xlabel = "Matrix Size",
+            ylabel = "Run Time  [micro Seconds]",
+            guidefontsize = 10,
+            title = "$fun",
+            titlefontsize = 10,
+            xscale = :log10,
+            yscale = :log10,
+            dpi = 300,
+        )
+
+        plotJuliaSIMD = occursin.(fun, sFunNameJuliamklSIMD) # if 1 will plot Julia-SIMD
+        if any(plotJuliaSIMD)
+
+            plt = plot!(
+                vMatrixSizeJuliamklSIMD,
+                [
+                 dropdims(mRunTimeJuliaSIMD[plotJuliaSIMD, :], dims = 1),
+                 dropdims(
+                     mRunTimeJuliaSIMDThreads4[plotJuliaSIMD, :],
+                     dims = 1,
+                 ),
+                 dropdims(mRunTimeJuliamklSIMD[plotJuliaSIMD, :], dims = 1),
+                ],
+                labels = [
+                    "Julia-SIMD-1-BLAS-Thread",
+                    "Julia-Blas-SIMD-4-BLAS-Threads",
+                    "Julia-MKL-SIMD",
+                ],
+                markershape = :auto,
+                markersize = 2,
+            )
+        end
+
+        display(plt) # display in plot pane
+        if (saveImages == 1)
+            savefig(joinpath(
+                "Figures",
+                "Julia",
+                "4BLASThreads",
+                "Figure$(ii).png",
+            ))
+        end
+
+        ii = ii + 1
+    end
     nothing
 end
