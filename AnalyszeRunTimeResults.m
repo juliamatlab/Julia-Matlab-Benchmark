@@ -10,37 +10,37 @@ saveImage=1; % save image or not
 
 %% Loading Data
 
-tRunTimeMatlab = readtable(fullfile('RunTimeData\', 'RunTimeMatlabTable.csv'));
+tRunTimeMatlab = readtable(fullfile('RunTimeData', 'RunTimeMatlabTable.csv'));
 mRunTimeMatlab=table2array(tRunTimeMatlab(2:end,2:end));
 vMatrixSizeMatlab=table2array(tRunTimeMatlab(1,2:end));
 sFunNameMatlab=table2array(tRunTimeMatlab(2:end,1));
 
-tRunTimeJulia = readtable(fullfile('RunTimeData\', 'RunTimeJuliaopenblas64Table.csv'));
+tRunTimeJulia = readtable(fullfile('RunTimeData', 'RunTimeJuliaopenblas64Table.csv'));
 mRunTimeJulia=table2array(tRunTimeJulia(2:end,2:end));
 vMatrixSizeJulia=table2array(tRunTimeJulia(1,2:end));
 sFunNameJulia=table2array(tRunTimeJulia(2:end,1));
 
-tRunTimeJuliaSIMD = readtable(fullfile('RunTimeData\', 'RunTimeJuliaopenblas64SIMDTable.csv'));
+tRunTimeJuliaSIMD = readtable(fullfile('RunTimeData', 'RunTimeJuliaopenblas64SIMDTable.csv'));
 mRunTimeJuliaSIMD=table2array(tRunTimeJuliaSIMD(2:end,2:end));
 vMatrixSizeJuliaSIMD=table2array(tRunTimeJuliaSIMD(1,2:end));
 sFunNameJuliaSIMD=table2array(tRunTimeJuliaSIMD(2:end,1));
 
-tRunTimeJulianThreads4 = readtable(fullfile('RunTimeData\', 'RunTimeJuliaopenblas64Table_4Thread.csv'));
+tRunTimeJulianThreads4 = readtable(fullfile('RunTimeData', 'RunTimeJuliaopenblas64Table_4Thread.csv'));
 mRunTimeJulianThreads4=table2array(tRunTimeJulianThreads4(2:end,2:end));
 vMatrixSizeJulianThreads4=table2array(tRunTimeJulianThreads4(1,2:end));
 sFunNameJulianThreads4=table2array(tRunTimeJulianThreads4(2:end,1));
 
-tRunTimeJuliaSIMDnThreads4 = readtable(fullfile('RunTimeData\', 'RunTimeJuliaopenblas64SIMDTable_4Thread.csv'));
+tRunTimeJuliaSIMDnThreads4 = readtable(fullfile('RunTimeData', 'RunTimeJuliaopenblas64SIMDTable_4Thread.csv'));
 mRunTimeJuliaSIMDnThreads4=table2array(tRunTimeJuliaSIMDnThreads4(2:end,2:end));
 vMatrixSizeJuliaSIMDnThreads4=table2array(tRunTimeJuliaSIMDnThreads4(1,2:end));
 sFunNameJuliaSIMDnThreads4=table2array(tRunTimeJuliaSIMDnThreads4(2:end,1));
 
-tRunTimeJuliamkl = readtable(fullfile('RunTimeData\', 'RunTimeJuliamklTable.csv'));
+tRunTimeJuliamkl = readtable(fullfile('RunTimeData', 'RunTimeJuliamklTable.csv'));
 mRunTimeJuliamkl=table2array(tRunTimeJuliamkl(2:end,2:end));
 vMatrixSizeJuliamkl=table2array(tRunTimeJuliamkl(1,2:end));
 sFunNameJuliamkl=table2array(tRunTimeJuliamkl(2:end,1));
 
-tRunTimeJuliamklSIMD = readtable(fullfile('RunTimeData\', 'RunTimeJuliamklSIMDTable.csv'));
+tRunTimeJuliamklSIMD = readtable(fullfile('RunTimeData', 'RunTimeJuliamklSIMDTable.csv'));
 mRunTimeJuliamklSIMD=table2array(tRunTimeJuliamklSIMD(2:end,2:end));
 vMatrixSizeJuliamklSIMD=table2array(tRunTimeJuliamklSIMD(1,2:end));
 sFunNameJuliamklSIMD=table2array(tRunTimeJuliamklSIMD(2:end,1));
