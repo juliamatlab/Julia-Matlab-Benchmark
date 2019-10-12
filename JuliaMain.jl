@@ -26,9 +26,9 @@ if JuliaFlag
 
     if saveData
         # Main RunTime Table write
-        writedlm("RunTimeData\\RunTimeJulia$(BLAS.vendor())Table.csv", tRunTime,',');
+        writedlm(joinpath("RunTimeData","RunTimeJulia$(BLAS.vendor())Table.csv"), tRunTime,',');
         # RunTime save
-        file = matopen("RunTimeData\\RunTimeJulia$(BLAS.vendor()).mat", "w")
+        file = matopen(joinpath("RunTimeData","RunTimeJulia$(BLAS.vendor()).mat"), "w")
         write(file, "mRunTime", mRunTime)
         close(file)
     end
@@ -43,9 +43,9 @@ if JuliaSIMDFlag
 
     if saveData
         # Main RunTime Table write
-        writedlm("RunTimeData\\RunTimeJulia$(BLAS.vendor())SIMDTable.csv", tRunTime,',');
+        writedlm(joinpath("RunTimeData","RunTimeJulia$(BLAS.vendor())SIMDTable.csv"), tRunTime,',');
         # RunTime save
-        file = matopen("RunTimeData\\RunTimeJulia$(BLAS.vendor())SIMD.mat", "w")
+        file = matopen(joinpath("RunTimeData","RunTimeJulia$(BLAS.vendor())SIMD.mat"), "w")
         write(file, "mRunTime", mRunTime)
         close(file)
     end
@@ -60,9 +60,9 @@ if JuliaFlag
 
     if saveData
         # Main RunTime Table write
-        writedlm("RunTimeData\\RunTimeJulia$(BLAS.vendor())Table_4Thread.csv", tRunTime,',');
+        writedlm(joinpath("RunTimeData","RunTimeJulia$(BLAS.vendor())Table_4Thread.csv"), tRunTime,',');
         # RunTime save
-        file = matopen("RunTimeData\\RunTimeJulia$(BLAS.vendor())_4Thread.mat", "w")
+        file = matopen(joinpath("RunTimeData","RunTimeJulia$(BLAS.vendor())_4Thread.mat"), "w")
         write(file, "mRunTime", mRunTime)
         close(file)
     end
@@ -77,9 +77,9 @@ if JuliaSIMDFlag
 
     if saveData
         # Main RunTime Table write
-        writedlm("RunTimeData\\RunTimeJulia$(BLAS.vendor())SIMDTable_4Thread.csv", tRunTime,',');
+        writedlm(joinpath("RunTimeData","RunTimeJulia$(BLAS.vendor())SIMDTable_4Thread.csv"), tRunTime,',');
         # RunTime save
-        file = matopen("RunTimeData\\RunTimeJulia$(BLAS.vendor())SIMD_4Thread.mat", "w")
+        file = matopen(joinpath("RunTimeData","RunTimeJulia$(BLAS.vendor())SIMD_4Thread.mat"), "w")
         write(file, "mRunTime", mRunTime)
         close(file)
     end
