@@ -4,21 +4,22 @@ This repository is a place for accurate benchmarks between Julia and MATLAB and 
 
 Various commonly used operations for Matrix operations, Mathematical calculations, Data Processing, Image processing, Signal processing, and different algorithms are tested.
 
-#[Julia vs Matlab](https://github.com/juliamatlab/Julia-Matlab-Benchmark/blob/master/README.md)
+#[Julia vs Matlab](https://github.com/juliamatlab/Julia-Matlab-Benchmark#julia-vs-matlab)
 
-#[Julia openBLAS vs Julia MKL](https://github.com/juliamatlab/Julia-Matlab-Benchmark/blob/master/README-Julia-openBLAS-vs-Julia-MKL.md)
+#[Julia openBLAS vs Julia MKL](https://github.com/juliamatlab/Julia-Matlab-Benchmark/blob/master/README-Julia-openBLAS-vs-Julia-MKL.md#julia-openblas-vs-julia-mkl)
 
-#[Julia SIMD vs Julia openBLAS](https://github.com/juliamatlab/Julia-Matlab-Benchmark/blob/master/README-Julia-SIMD-vs-Julia-openBLAS.md)
+#[Julia SIMD vs Julia openBLAS](https://github.com/juliamatlab/Julia-Matlab-Benchmark/blob/master/README-Julia-SIMD-vs-Julia-openBLAS.md#julia-simd-vs-julia-openblas)
 
-#[Everything](https://github.com/juliamatlab/Julia-Matlab-Benchmark/blob/master/README-Everything.md)
+#[Everything](https://github.com/juliamatlab/Julia-Matlab-Benchmark/blob/master/README-Everything.md#everything)
 
 ## Development and Future
 This repository will be extended as more functions are added to the [JuliaMatlab](https://github.com/juliamatlab) repository, which is meant to map all the Matlab functions to Julia native functions.
 
 ## Other Features
 * Latest Julia language is used (compatible with 1.0.4 and higher).
-* Julia + Intel MKL is also tested. (For tutorial to install: https://github.com/aminya/MKL.jl/tree/patch-1)
-* For some functions, Julia's multithreading and SIMD is used instead of built-in functions.
+* Julia + Intel MKL is also tested. (https://github.com/JuliaComputing/MKL.jl)
+* Different number of BLAS threads are tested (`BLAS.set_num_threads(n)`)
+* For some of the functions, Julia's SIMD is tested instead of built-in functions.
 * Accurate benchmarking tools are used both in Julia and MATLAB to get an reliable result
 
 #  Julia-openBLAS-vs-Julia-MKL
@@ -205,9 +206,9 @@ Download repository. Or add the package in Julia:
 
  ```include("JuliaAnalysisMain.jl");```.
  * Images of the performance test will be created and displayed.
- 
-## To Do:
- * This repository will be extended as more functions are added to the [MatlabCompat](https://github.com/aminya/MatlabCompat.jl) repository, which is meant to map all the Matlab functions to Julia native functions
+
+ ## To Do:
+ * This repository will be extended as more functions are added to the [MatLang](https://github.com/juliamatlab/MatLang) repository, which is meant to map all the Matlab functions to Julia native functions
 
  * Check if Julia code is efficient. using https://github.com/JunoLab/Traceur.jl and https://docs.julialang.org/en/v1/manual/performance-tips/index.html
 
@@ -236,7 +237,7 @@ Two version of Julia was used:
 
  * JuliaMKL: Julia 1.4.0 + MKL.
      * Julia Version (`versioninfo()`) - `Julia VersionVersion 1.4.0-DEV.233 Commit 32e3c9ea36 (2019-10-02 12:28 UTC)`;
-     * BLAS Version - `LinearAlgebra.BLAS.vendor(): Intel MKL `.  For tutorial to install https://github.com/JuliaComputing/MKL.jl 
+     * BLAS Version - `LinearAlgebra.BLAS.vendor(): Intel MKL `.  For tutorial to install https://github.com/JuliaComputing/MKL.jl
      * LAPACK Version - `libopenblas64_`.
      * LIBM Version - `libopenlibm`.
      * LLVM Version - `libLLVM-6.0.1 (ORCJIT, skylake)`.
