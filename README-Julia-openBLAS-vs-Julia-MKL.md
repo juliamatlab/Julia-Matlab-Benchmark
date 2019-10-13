@@ -220,34 +220,33 @@ coming soon
 
 
 ## System Configuration
- * System Model - Dell Latitude 5590
- https://www.dell.com/en-ca/work/shop/dell-tablets/latitude-5590/spd/latitude-15-5590-laptop
- * CPU - Intel(R) Core(TM) i5-8250U @ 1.6 [GHz] 1800 Mhz, 4 Cores, 8 Logical Processors.
- * Memory - 1x8GB DDR4 2400MHz Non-ECC
- * Windows 10 Professional 64 Bit
+ * System Model - Sony Vaio VPCSC1AFD
+
+ * CPU - Intel(R) Core(TM) i5-2410M CPU @ 2.30GHz
+ * Memory - 2x4GB DDR3 
+ * Linux (x86_64-pc-linux-gnu) - Ubuntu
  * WORD_SIZE: 64
 
 
- * MATLAB R2018b.
-    * BLAS Version (`version -blas`) - `Intel(R) Math Kernel Library Version 2018.0.1 Product Build 20171007 for Intel(R) 64 architecture applications, CNR branch AVX2`
-    * LAPACK Version (`version -lapack`) - `Intel(R) Math Kernel Library Version 2018.0.1 Product Build 20171007 for Intel(R) 64 architecture applications CNR branch AVX2  Linear Algebra Package Version 3.7.0`
-
+ * MATLAB R2019a.
+    * BLAS Version (`version -blas`) - `Intel(R) Math Kernel Library Version 2018.0.3 Product Build 20180406 for Intel(R) 64 architecture applications, CNR branch AVX`
+    * LAPACK Version (`version -lapack`) - `Intel(R) Math Kernel Library Version 2018.0.3 Product Build 20180406 for Intel(R) 64 architecture applications, CNR branch AVX Linear Algebra PACKage Version 3.7.0`
 Two version of Julia was used:
 
  * JuliaMKL: Julia 1.4.0 + MKL.
-     * Julia Version (`versioninfo()`) - `Julia VersionVersion 1.4.0-DEV.233 Commit 32e3c9ea36 (2019-10-02 12:28 UTC)`;
+     * Julia Version (`versioninfo()`) - `Julia Version 1.4.0-DEV.303 Commit d9c84bf763 (2019-10-12 00:15 UTC)`
      * BLAS Version - `LinearAlgebra.BLAS.vendor(): Intel MKL `.  For tutorial to install https://github.com/JuliaComputing/MKL.jl 
      * LAPACK Version - `libopenblas64_`.
      * LIBM Version - `libopenlibm`.
-     * LLVM Version - `libLLVM-6.0.1 (ORCJIT, skylake)`.
+     * LLVM Version - `libLLVM-6.0.1  (ORCJIT, sandybridge)`.
      * JULIA_NUM_THREADS = 1. This number of threads is different from BLAS threads. BLAS threads is changed in the code by `BLAS.set_num_threads(1)` and `BLAS.set_num_threads(4)`
 
  * Julia: Julia 1.4.0
-     * Julia Version (`versioninfo()`) - `Julia VersionVersion 1.4.0-DEV.233 Commit 32e3c9ea36 (2019-10-02 12:28 UTC)`;
+     * Julia Version (`versioninfo()`) - `Julia Version 1.4.0-DEV.303 Commit d9c84bf763 (2019-10-12 00:15 UTC)`
      * BLAS Version - `LinearAlgebra.BLAS.vendor(): openBlas64 `.
      * LAPACK Version - `libopenblas64_`.
      * LIBM Version - `libopenlibm`.
-     * LLVM Version - `libLLVM-6.0.1 (ORCJIT, skylake)`.
+     * LLVM Version - `libLLVM-6.0.1  (ORCJIT, sandybridge)`.
      * JULIA_NUM_THREADS = 1. This number of threads is different from BLAS threads. BLAS threads is changed in the code by `BLAS.set_num_threads(1)` and `BLAS.set_num_threads(4)`
 
   [01]: https://github.com/juliamatlab/Julia-Matlab-Benchmark/raw/master/Figures/Julia-1-BLAS-Thread_Julia-4-BLAS-Threads_Julia-MKL/Figure1.png
