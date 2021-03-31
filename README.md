@@ -30,8 +30,8 @@ This repository will be extended as more functions are added to the [JuliaMatlab
 
 Generation of a Square Matrix using the `randn()` function and `rand()`.
 
- * MATLAB Code - `mA = randn(matrixSize, matrixSize)`, `mB = randn(matrixSize, matrixSize)`.
- * Julia Code - `mA = randn(matrixSize, matrixSize)`, `mB = randn(matrixSize, matrixSize)`.
+ * MATLAB Code - `mA = randn(matrixSize, matrixSize)`, `mB = rand(matrixSize, matrixSize)`.
+ * Julia Code - `mA = randn(matrixSize, matrixSize)`, `mB = rand(matrixSize, matrixSize)`.
 
 ![Matrix Generation][01]
 
